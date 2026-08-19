@@ -1,19 +1,10 @@
-\set ON_ERROR_STOP on
--- Notas tecnicas observadas y comentadas en el archivo 
--- Primero el uso del "\set ON_ERROR_STOP on" detiene la ejecucion en el primer error,
--- mostrando la linea exacta del archivo y el motivo del fallo.
--- Si no se usa este comando, psql continuaria pese a los errores y las tablas quedarian con datos parciales e inconsistentes.
--- Pense que agregarlo nos ayudaría a intervenir mejor en caso de errores, y a mantener la integridad de los datos.
--- Y segundo, los INSERT usan IDs explicitos (ejemplo: id_cliente = 1..50, etc) esto se debe para
--- que las claves foraneas sean legibles. Los SERIAL quedan sincronizados tras el TRUNCATE en caso de ser necesario hacerlo.
--- Por último, la carga se hace en orden de dependencia de claves foraneas, primero las tablas padre y luego las hijas.
--- LIMPIEZA PREVIA (TRUNCATE)
--- TODO: escribir aqui la explicacion didactica del TRUNCATE
--- El TRUNCATE es una instrucción SQL que se utiliza para eliminar todos los registros de una o más tablas de manera más rápida. 
--- A diferencia de la instrucción DELETE, que elimina fila por fila y puede ser más lenta, TRUNCATE elimina todos los registros de la tabla de una sola vez, liberando el espacio de almacenamiento utilizado por esos registros. 
--- Además, TRUNCATE reinicia los contadores de las columnas SERIAL (si las hay) a su valor inicial, lo que significa que los próximos registros insertados comenzarán desde el valor inicial nuevamente.
--- Y, además, al usar TRUNCATE ... CASCADE nos ayuda a eliminar registros de tablas relacionadas automáticamente, evitando errores de integridad referencial.
--- mucho texto, perdón...
+/* Coloquen (alt + z) para que el texto se ajuste a la pantalla y sea más legible 
+CORRECCIÓN, se eliminó el meta-comando "\set ON_ERROR_STOP on" (solo funciona en psql) para que el script sea compatible tanto con psql como con pgAdmin4. En psql, ante un error, el script se detiene igualmente con: -v ON_ERROR_STOP=1 
+LIMPIEZA PREVIA (TRUNCATE), se usará TRUNCATE ... CASCADE para eliminar todos los registros de las tablas y reiniciar los contadores de las columnas SERIAL (si las hay) a su valor inicial. Y, por cierto, el TRUNCATE es una instrucción SQL que se utiliza para eliminar todos los registros de una o más tablas de manera más rápida. 
+A diferencia de la instrucción DELETE, que elimina fila por fila y puede ser más lenta, TRUNCATE elimina todos los registros de la tabla de una sola vez, liberando el espacio de almacenamiento utilizado por esos registros.  
+Y, además, al usar TRUNCATE ... CASCADE nos ayuda a eliminar registros de tablas relacionadas automáticamente, evitando errores de integridad referencial.
+mucho texto, perdón... */
+SET search_path TO logitrack; -- el search_path es una variable de configuración que indica el esquema por defecto para las operaciones de la base de datos. En este caso, se establece en "logitrack", lo que significa que todas las operaciones posteriores se realizarán en ese esquema a menos que se especifique lo contrario, y, tenemos que usarlo porque en pgAdmin4 no funciona el meta-comando "\c logitrack" (solo funciona en psql) para conectarse a la base de datos "logitrack" y establecerla como la base de datos activa.
 TRUNCATE TABLE logitrack.clientes,
              logitrack.categorias,
              logitrack.productos,
@@ -410,8 +401,7 @@ INSERT INTO logitrack.ubicaciones (id_ubicacion, id_bodega, pasillo, estante, ni
 (49, 5, 'B', '4', 'N2'),
 (50, 5, 'B', '5', 'N2');
 
--- 8. INVENTARIO (50 registros) | cantidad por producto y ubicacion
---    fecha_actualizacion omitida dado que se usa DEFAULT CURRENT_TIMESTAMP 
+-- 8. INVENTARIO (50 registros) | cantidad por producto y ubicacion 
 INSERT INTO logitrack.inventario (id_inventario, id_producto, id_ubicacion, stock, stock_minimo) VALUES
 (1,  1,  1,  120, 15),
 (2,  2,  2,   85, 20),
@@ -760,3 +750,20 @@ UNION ALL SELECT 'ordenes',              count(*) FROM logitrack.ordenes
 UNION ALL SELECT 'detalle_ordenes',      count(*) FROM logitrack.detalle_ordenes
 UNION ALL SELECT 'envios',               count(*) FROM logitrack.envios
 ORDER BY tabla;
+
+-- SINCRONIZACIÓN DE SECUENCIAS (setval)
+-- Los INSERTs usan IDs explícitos (1..50/60), por lo que las secuencias SERIAL nunca avanzaron.
+-- Sin este paso, el próximo INSERT sin id generaría nextval=1 y violaría la PK (llave duplicada).
+-- Esto se agrego porque en la Consulta 5 se pide que las secuencias estén sincronizadas con los datos insertados, bueno, no así, pero generá un error si no se hace y no deja hacer la consulta 5. 
+SELECT setval('logitrack.categorias_id_categoria_seq', 50);
+SELECT setval('logitrack.clientes_id_cliente_seq', 50);
+SELECT setval('logitrack.productos_id_producto_seq', 50);
+SELECT setval('logitrack.proveedores_id_proveedor_seq', 50);
+SELECT setval('logitrack.bodega_id_bodega_seq', 50);
+SELECT setval('logitrack.ubicaciones_id_ubicacion_seq', 50);
+SELECT setval('logitrack.inventario_id_inventario_seq', 50);
+SELECT setval('logitrack.empleados_id_empleado_seq', 50);
+SELECT setval('logitrack.transportistas_id_transportista_seq', 50);
+SELECT setval('logitrack.ordenes_id_orden_seq', 50);
+SELECT setval('logitrack.detalle_ordenes_id_detalle_seq', 60);
+SELECT setval('logitrack.envios_id_envio_seq', 50);
