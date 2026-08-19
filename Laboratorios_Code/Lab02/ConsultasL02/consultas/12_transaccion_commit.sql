@@ -20,4 +20,10 @@ COMMIT;
 -- Verificación: la orden, su detalle y el envío quedaron registrados
 SELECT * FROM ordenes WHERE id_orden = currval('logitrack.ordenes_id_orden_seq');
 SELECT * FROM detalle_ordenes WHERE id_orden = currval('logitrack.ordenes_id_orden_seq');
-SELECT * FROM envios WHERE id_orden = currval('logitrack.ordenes_id_orden_seq');
+SELECT * FROM envios WHERE id_orden = currval('logitrack.ordenes_id_orden_seq'); 
+
+-- Debe entregar lo siguiente: 
+-- id_envio | id_orden | id_transportista | id_empleado | fecha despacho | fecha_entrega | estado
+-- 51 |	51 | 1 |	1 |	"2026-08-19 12:02:30.129857"                     | NULL	| "programado" | 
+
+-- Es decir, la orden con id_orden=51, su detalle y el envío asociado fueron correctamente registrados en la base de datos.. 
