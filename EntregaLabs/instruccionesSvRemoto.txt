@@ -1,0 +1,108 @@
+Conexion al servidor remoto de LogiTrack
+
+
+1. Conexion SSH
+
+Para acceder al servidor utilicen el siguiente comando desde su
+terminal o consola:
+
+  ssh ua_eq06@143.198.118.203
+
+Se les pedira la contrasena. Ingresen:
+
+  equipo06_
+
+Si es la primera vez que se conectan, es posible que aparezca un
+aviso sobre la huella digital del servidor. Acepten escribiendo yes.
+
+
+2. Conexion a PostgreSQL
+
+Una vez dentro del servidor, conecctense a la base de datos con
+psql:
+
+  psql -h 127.0.0.1 -U ua_eq06 -d ua_eq06
+
+Esto los dejara dentro de la consola de PostgreSQL listos para
+ejecutar comandos SQL.
+
+
+3. Crear la base de datos
+
+Antes de crear la base, verifiquen si ya existe. Desde la consola
+psql conectados a ua_eq06, ejecuten:
+
+  \l
+
+Esto mostrara una lista de todas las bases de datos disponibles.
+Busquen logitrack en la columna Database. Si aparece, no es
+necesario crearla de nuevo y pueden saltar al paso 4.
+
+Si prefieren verificar con una consulta SQL, utilicen:
+
+  SELECT datname FROM pg_database WHERE datname = 'logitrack';
+
+Si el resultado es vacio, la base no existe y deben crearla con:
+
+  CREATE DATABASE logitrack;
+
+Despues salgan de la sesion actual con \q y conectense a la nueva
+base:
+
+  psql -h 127.0.0.1 -U ua_eq06 -d logitrack
+
+
+4. Ejecutar los scripts
+
+Desde la consola psql, ejecuten cada script en orden:
+
+  \i archivos/01_creacion_bd.sql
+  \i archivos/02_carga_datos.sql
+  \i archivos/03_ddl.sql
+  \i archivos/04_dml.sql
+  \i archivos/05_consultas.sql
+  \i archivos/06_transacciones.sql
+
+Para que \i funcione, los archivos deben estar en la misma
+carpeta desde donde ejecutan el comando. Si no los encuentran,
+suban los archivos al servidor primero con scp:
+
+  scp archivos/*.sql ua_eq06@143.198.118.203:/tmp/
+
+Despues conectense al servidor y ejecuten los comandos desde /tmp.
+
+
+5. Generar el respaldo
+
+Para crear un nuevo respaldo de la base, ejecuten:
+
+  pg_dump -h 127.0.0.1 -U ua_eq06 -d logitrack -F p -f backup_logitrack.sql
+
+Esto generara un archivo de texto con todas las instrucciones SQL
+necesarias para recrear la base completa.
+
+
+6. Restaurar desde el respaldo
+
+Si necesitan restaurar la base, utilicen:
+
+  psql -h 127.0.0.1 -U ua_eq06 -d logitrack -f backup_logitrack.sql
+
+Si aparece un error indicando que las tablas ya existen, eliminen
+el esquema antes de restaurar:
+
+  psql -h 127.0.0.1 -U ua_eq06 -d logitrack -c "DROP SCHEMA logitrack CASCADE;"
+  psql -h 127.0.0.1 -U ua_eq06 -d logitrack -f backup_logitrack.sql
+
+
+7. Verificar la restauracion
+
+Cuenten los registros en algunas tablas para confirmar que todo
+quedo bien:
+
+  SELECT count(*) FROM logitrack.clientes;
+  SELECT count(*) FROM logitrack.productos;
+  SELECT count(*) FROM logitrack.ordenes;
+
+El resultado debe ser 50 en cada una de estas tablas. Si ven menos
+registros o errores, repitan el proceso de restauracion.
