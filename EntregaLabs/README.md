@@ -1,6 +1,6 @@
 LogiTrack - Laboratorio - Base de Datos II
 
-Nombre Equipo: [PENDIENTE]
+Nombre Equipo: The Jackson 5QL
 
 1. Descripcion general
 

@@ -1,6 +1,6 @@
 Sección P01 - D 
 
-Nombre del Equipo - 
+The Jackson 5QL
 
 Scrum Master - Ignacio Antonio Ampuero Chacón
 Developer - Engel Yulisa Falcon Nilo 
