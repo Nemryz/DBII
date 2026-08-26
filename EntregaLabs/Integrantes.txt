@@ -1,9 +1,9 @@
-Sección P01 - D 
+Sección P01 - D
 
 The Jackson 5QL
 
-Scrum Master - Ignacio Antonio Ampuero Chacón
-Developer - Engel Yulisa Falcon Nilo 
+Scrum Master / Developer - Ignacio Antonio Ampuero Chacón
+Developer - Engel Yulisa Falcon Nilo
 Developer - Adrián David Mancilla Carter
 Developer - José Tomás Véliz Jorquera
 Developer - Benjamín Ignacio Astorga Ulloa
