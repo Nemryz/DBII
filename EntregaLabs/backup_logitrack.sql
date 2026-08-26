@@ -2,10 +2,8 @@
 -- PostgreSQL database dump
 --
 
-\restrict lYdvnNBROxhZjnJldhksU2gHC0dQhuyzkMivnasVdgsabJRvVAT0FIuTFRtJ6Hs
-
--- Dumped from database version 15.19
--- Dumped by pg_dump version 15.19
+-- Dumped from database version 15.5 (Ubuntu 15.5-0ubuntu0.23.04.1)
+-- Dumped by pg_dump version 15.5 (Ubuntu 15.5-0ubuntu0.23.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -19,18 +17,20 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: logitrack; Type: SCHEMA; Schema: -; Owner: -
+-- Name: logitrack; Type: SCHEMA; Schema: -; Owner: ua_eq06
 --
 
 CREATE SCHEMA logitrack;
 
+
+ALTER SCHEMA logitrack OWNER TO ua_eq06;
 
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- Name: bodega; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: bodega; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.bodega (
@@ -43,8 +43,10 @@ CREATE TABLE logitrack.bodega (
 );
 
 
+ALTER TABLE logitrack.bodega OWNER TO ua_eq06;
+
 --
--- Name: bodega_id_bodega_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: bodega_id_bodega_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.bodega_id_bodega_seq
@@ -56,15 +58,17 @@ CREATE SEQUENCE logitrack.bodega_id_bodega_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.bodega_id_bodega_seq OWNER TO ua_eq06;
+
 --
--- Name: bodega_id_bodega_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: bodega_id_bodega_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.bodega_id_bodega_seq OWNED BY logitrack.bodega.id_bodega;
 
 
 --
--- Name: categorias; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: categorias; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.categorias (
@@ -74,8 +78,10 @@ CREATE TABLE logitrack.categorias (
 );
 
 
+ALTER TABLE logitrack.categorias OWNER TO ua_eq06;
+
 --
--- Name: categorias_id_categoria_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: categorias_id_categoria_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.categorias_id_categoria_seq
@@ -87,15 +93,17 @@ CREATE SEQUENCE logitrack.categorias_id_categoria_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.categorias_id_categoria_seq OWNER TO ua_eq06;
+
 --
--- Name: categorias_id_categoria_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: categorias_id_categoria_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.categorias_id_categoria_seq OWNED BY logitrack.categorias.id_categoria;
 
 
 --
--- Name: clientes; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: clientes; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.clientes (
@@ -110,8 +118,10 @@ CREATE TABLE logitrack.clientes (
 );
 
 
+ALTER TABLE logitrack.clientes OWNER TO ua_eq06;
+
 --
--- Name: clientes_id_cliente_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: clientes_id_cliente_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.clientes_id_cliente_seq
@@ -123,15 +133,17 @@ CREATE SEQUENCE logitrack.clientes_id_cliente_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.clientes_id_cliente_seq OWNER TO ua_eq06;
+
 --
--- Name: clientes_id_cliente_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: clientes_id_cliente_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.clientes_id_cliente_seq OWNED BY logitrack.clientes.id_cliente;
 
 
 --
--- Name: detalle_ordenes; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.detalle_ordenes (
@@ -145,8 +157,10 @@ CREATE TABLE logitrack.detalle_ordenes (
 );
 
 
+ALTER TABLE logitrack.detalle_ordenes OWNER TO ua_eq06;
+
 --
--- Name: detalle_ordenes_id_detalle_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes_id_detalle_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.detalle_ordenes_id_detalle_seq
@@ -158,15 +172,17 @@ CREATE SEQUENCE logitrack.detalle_ordenes_id_detalle_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.detalle_ordenes_id_detalle_seq OWNER TO ua_eq06;
+
 --
--- Name: detalle_ordenes_id_detalle_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes_id_detalle_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.detalle_ordenes_id_detalle_seq OWNED BY logitrack.detalle_ordenes.id_detalle;
 
 
 --
--- Name: empleados; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: empleados; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.empleados (
@@ -179,8 +195,10 @@ CREATE TABLE logitrack.empleados (
 );
 
 
+ALTER TABLE logitrack.empleados OWNER TO ua_eq06;
+
 --
--- Name: empleados_id_empleado_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: empleados_id_empleado_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.empleados_id_empleado_seq
@@ -192,15 +210,17 @@ CREATE SEQUENCE logitrack.empleados_id_empleado_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.empleados_id_empleado_seq OWNER TO ua_eq06;
+
 --
--- Name: empleados_id_empleado_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: empleados_id_empleado_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.empleados_id_empleado_seq OWNED BY logitrack.empleados.id_empleado;
 
 
 --
--- Name: envios; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: envios; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.envios (
@@ -215,8 +235,10 @@ CREATE TABLE logitrack.envios (
 );
 
 
+ALTER TABLE logitrack.envios OWNER TO ua_eq06;
+
 --
--- Name: envios_id_envio_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: envios_id_envio_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.envios_id_envio_seq
@@ -228,15 +250,17 @@ CREATE SEQUENCE logitrack.envios_id_envio_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.envios_id_envio_seq OWNER TO ua_eq06;
+
 --
--- Name: envios_id_envio_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: envios_id_envio_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.envios_id_envio_seq OWNED BY logitrack.envios.id_envio;
 
 
 --
--- Name: inventario; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: inventario; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.inventario (
@@ -251,8 +275,10 @@ CREATE TABLE logitrack.inventario (
 );
 
 
+ALTER TABLE logitrack.inventario OWNER TO ua_eq06;
+
 --
--- Name: inventario_id_inventario_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: inventario_id_inventario_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.inventario_id_inventario_seq
@@ -264,15 +290,17 @@ CREATE SEQUENCE logitrack.inventario_id_inventario_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.inventario_id_inventario_seq OWNER TO ua_eq06;
+
 --
--- Name: inventario_id_inventario_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: inventario_id_inventario_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.inventario_id_inventario_seq OWNED BY logitrack.inventario.id_inventario;
 
 
 --
--- Name: ordenes; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: ordenes; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.ordenes (
@@ -286,8 +314,10 @@ CREATE TABLE logitrack.ordenes (
 );
 
 
+ALTER TABLE logitrack.ordenes OWNER TO ua_eq06;
+
 --
--- Name: ordenes_id_orden_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: ordenes_id_orden_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.ordenes_id_orden_seq
@@ -299,15 +329,17 @@ CREATE SEQUENCE logitrack.ordenes_id_orden_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.ordenes_id_orden_seq OWNER TO ua_eq06;
+
 --
--- Name: ordenes_id_orden_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: ordenes_id_orden_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.ordenes_id_orden_seq OWNED BY logitrack.ordenes.id_orden;
 
 
 --
--- Name: producto_proveedor; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: producto_proveedor; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.producto_proveedor (
@@ -320,8 +352,10 @@ CREATE TABLE logitrack.producto_proveedor (
 );
 
 
+ALTER TABLE logitrack.producto_proveedor OWNER TO ua_eq06;
+
 --
--- Name: productos; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: productos; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.productos (
@@ -337,8 +371,10 @@ CREATE TABLE logitrack.productos (
 );
 
 
+ALTER TABLE logitrack.productos OWNER TO ua_eq06;
+
 --
--- Name: productos_id_producto_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: productos_id_producto_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.productos_id_producto_seq
@@ -350,15 +386,17 @@ CREATE SEQUENCE logitrack.productos_id_producto_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.productos_id_producto_seq OWNER TO ua_eq06;
+
 --
--- Name: productos_id_producto_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: productos_id_producto_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.productos_id_producto_seq OWNED BY logitrack.productos.id_producto;
 
 
 --
--- Name: proveedores; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: proveedores; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.proveedores (
@@ -371,8 +409,10 @@ CREATE TABLE logitrack.proveedores (
 );
 
 
+ALTER TABLE logitrack.proveedores OWNER TO ua_eq06;
+
 --
--- Name: proveedores_id_proveedor_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: proveedores_id_proveedor_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.proveedores_id_proveedor_seq
@@ -384,15 +424,17 @@ CREATE SEQUENCE logitrack.proveedores_id_proveedor_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.proveedores_id_proveedor_seq OWNER TO ua_eq06;
+
 --
--- Name: proveedores_id_proveedor_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: proveedores_id_proveedor_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.proveedores_id_proveedor_seq OWNED BY logitrack.proveedores.id_proveedor;
 
 
 --
--- Name: transportistas; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: transportistas; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.transportistas (
@@ -404,8 +446,10 @@ CREATE TABLE logitrack.transportistas (
 );
 
 
+ALTER TABLE logitrack.transportistas OWNER TO ua_eq06;
+
 --
--- Name: transportistas_id_transportista_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: transportistas_id_transportista_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.transportistas_id_transportista_seq
@@ -417,15 +461,17 @@ CREATE SEQUENCE logitrack.transportistas_id_transportista_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.transportistas_id_transportista_seq OWNER TO ua_eq06;
+
 --
--- Name: transportistas_id_transportista_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: transportistas_id_transportista_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.transportistas_id_transportista_seq OWNED BY logitrack.transportistas.id_transportista;
 
 
 --
--- Name: ubicaciones; Type: TABLE; Schema: logitrack; Owner: -
+-- Name: ubicaciones; Type: TABLE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE TABLE logitrack.ubicaciones (
@@ -437,8 +483,10 @@ CREATE TABLE logitrack.ubicaciones (
 );
 
 
+ALTER TABLE logitrack.ubicaciones OWNER TO ua_eq06;
+
 --
--- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE; Schema: logitrack; Owner: -
+-- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE; Schema: logitrack; Owner: ua_eq06
 --
 
 CREATE SEQUENCE logitrack.ubicaciones_id_ubicacion_seq
@@ -450,99 +498,101 @@ CREATE SEQUENCE logitrack.ubicaciones_id_ubicacion_seq
     CACHE 1;
 
 
+ALTER TABLE logitrack.ubicaciones_id_ubicacion_seq OWNER TO ua_eq06;
+
 --
--- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: -
+-- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE OWNED BY; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER SEQUENCE logitrack.ubicaciones_id_ubicacion_seq OWNED BY logitrack.ubicaciones.id_ubicacion;
 
 
 --
--- Name: bodega id_bodega; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: bodega id_bodega; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.bodega ALTER COLUMN id_bodega SET DEFAULT nextval('logitrack.bodega_id_bodega_seq'::regclass);
 
 
 --
--- Name: categorias id_categoria; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: categorias id_categoria; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.categorias ALTER COLUMN id_categoria SET DEFAULT nextval('logitrack.categorias_id_categoria_seq'::regclass);
 
 
 --
--- Name: clientes id_cliente; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: clientes id_cliente; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.clientes ALTER COLUMN id_cliente SET DEFAULT nextval('logitrack.clientes_id_cliente_seq'::regclass);
 
 
 --
--- Name: detalle_ordenes id_detalle; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes id_detalle; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.detalle_ordenes ALTER COLUMN id_detalle SET DEFAULT nextval('logitrack.detalle_ordenes_id_detalle_seq'::regclass);
 
 
 --
--- Name: empleados id_empleado; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: empleados id_empleado; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.empleados ALTER COLUMN id_empleado SET DEFAULT nextval('logitrack.empleados_id_empleado_seq'::regclass);
 
 
 --
--- Name: envios id_envio; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: envios id_envio; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.envios ALTER COLUMN id_envio SET DEFAULT nextval('logitrack.envios_id_envio_seq'::regclass);
 
 
 --
--- Name: inventario id_inventario; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: inventario id_inventario; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.inventario ALTER COLUMN id_inventario SET DEFAULT nextval('logitrack.inventario_id_inventario_seq'::regclass);
 
 
 --
--- Name: ordenes id_orden; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: ordenes id_orden; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ordenes ALTER COLUMN id_orden SET DEFAULT nextval('logitrack.ordenes_id_orden_seq'::regclass);
 
 
 --
--- Name: productos id_producto; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: productos id_producto; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.productos ALTER COLUMN id_producto SET DEFAULT nextval('logitrack.productos_id_producto_seq'::regclass);
 
 
 --
--- Name: proveedores id_proveedor; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: proveedores id_proveedor; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.proveedores ALTER COLUMN id_proveedor SET DEFAULT nextval('logitrack.proveedores_id_proveedor_seq'::regclass);
 
 
 --
--- Name: transportistas id_transportista; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: transportistas id_transportista; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.transportistas ALTER COLUMN id_transportista SET DEFAULT nextval('logitrack.transportistas_id_transportista_seq'::regclass);
 
 
 --
--- Name: ubicaciones id_ubicacion; Type: DEFAULT; Schema: logitrack; Owner: -
+-- Name: ubicaciones id_ubicacion; Type: DEFAULT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ubicaciones ALTER COLUMN id_ubicacion SET DEFAULT nextval('logitrack.ubicaciones_id_ubicacion_seq'::regclass);
 
 
 --
--- Data for Name: bodega; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: bodega; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.bodega (id_bodega, nombre, direccion, ciudad, capacidad_m3) FROM stdin;
@@ -600,7 +650,7 @@ COPY logitrack.bodega (id_bodega, nombre, direccion, ciudad, capacidad_m3) FROM 
 
 
 --
--- Data for Name: categorias; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: categorias; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.categorias (id_categoria, nombre, descripcion) FROM stdin;
@@ -658,7 +708,7 @@ COPY logitrack.categorias (id_categoria, nombre, descripcion) FROM stdin;
 
 
 --
--- Data for Name: clientes; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: clientes; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.clientes (id_cliente, nombre, rut, direccion, ciudad, telefono, email, fecha_registro) FROM stdin;
@@ -712,12 +762,12 @@ COPY logitrack.clientes (id_cliente, nombre, rut, direccion, ciudad, telefono, e
 48	Procter & Gamble Chile	76.000.048-8	Av. Vitacura 2905	Las Condes	+56 2 2330 4548	centro@pg.cl	2025-07-04
 49	Laboratorio SAVAL	76.000.049-9	Av. General Bustamante 26	Providencia	+56 2 2370 4549	farmacovigilancia@saval.cl	2025-07-18
 50	Laboratorio Andrómaco	76.000.050-0	Av. Marcoleta 342	Santiago	+56 2 2666 4550	comercial@andromaco.cl	2025-08-01
-53	Carlos García	33.333.333-3	Calle del Sol 789	Santiago	555-9876	carlos.garcia@example.com	2026-08-24
+53	Carlos García	33.333.333-3	Calle del Sol 789	Santiago	555-9876	carlos.garcia@example.com	2026-08-25
 \.
 
 
 --
--- Data for Name: detalle_ordenes; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: detalle_ordenes; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.detalle_ordenes (id_detalle, id_orden, id_producto, cantidad, precio_unitario) FROM stdin;
@@ -786,7 +836,7 @@ COPY logitrack.detalle_ordenes (id_detalle, id_orden, id_producto, cantidad, pre
 
 
 --
--- Data for Name: empleados; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: empleados; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.empleados (id_empleado, nombre, rut, cargo, id_bodega, fecha_contratacion) FROM stdin;
@@ -844,7 +894,7 @@ COPY logitrack.empleados (id_empleado, nombre, rut, cargo, id_bodega, fecha_cont
 
 
 --
--- Data for Name: envios; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: envios; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.envios (id_envio, id_orden, id_transportista, id_empleado, fecha_despacho, fecha_entrega, estado) FROM stdin;
@@ -898,70 +948,70 @@ COPY logitrack.envios (id_envio, id_orden, id_transportista, id_empleado, fecha_
 48	48	48	48	2026-07-25 12:10:00	2026-07-28	entregado
 49	49	49	49	2026-07-26 09:05:00	2026-07-29	entregado
 50	50	50	50	2026-07-26 13:40:00	\N	rechazado
-51	51	1	1	2026-08-24 23:31:43.953151	\N	programado
+51	51	1	1	2026-08-25 04:58:30.33874	\N	programado
 \.
 
 
 --
--- Data for Name: inventario; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: inventario; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.inventario (id_inventario, id_producto, id_ubicacion, stock, stock_minimo, fecha_actualizacion) FROM stdin;
-2	2	2	85	20	2026-08-24 23:31:15.806089
-3	3	3	45	10	2026-08-24 23:31:15.806089
-4	4	4	32	8	2026-08-24 23:31:15.806089
-5	5	5	60	12	2026-08-24 23:31:15.806089
-6	6	6	150	25	2026-08-24 23:31:15.806089
-7	7	7	55	10	2026-08-24 23:31:15.806089
-8	8	8	200	30	2026-08-24 23:31:15.806089
-9	9	9	180	20	2026-08-24 23:31:15.806089
-10	10	10	140	25	2026-08-24 23:31:15.806089
-11	11	11	75	15	2026-08-24 23:31:15.806089
-12	12	12	95	18	2026-08-24 23:31:15.806089
-13	13	13	210	35	2026-08-24 23:31:15.806089
-14	14	14	320	50	2026-08-24 23:31:15.806089
-15	15	15	40	10	2026-08-24 23:31:15.806089
-16	16	16	165	28	2026-08-24 23:31:15.806089
-17	17	17	190	30	2026-08-24 23:31:15.806089
-18	18	18	25	6	2026-08-24 23:31:15.806089
-19	19	19	18	5	2026-08-24 23:31:15.806089
-20	20	20	70	12	2026-08-24 23:31:15.806089
-21	21	21	48	10	2026-08-24 23:31:15.806089
-22	22	22	230	40	2026-08-24 23:31:15.806089
-23	23	23	110	20	2026-08-24 23:31:15.806089
-24	24	24	260	45	2026-08-24 23:31:15.806089
-25	25	25	90	15	2026-08-24 23:31:15.806089
-26	26	26	175	30	2026-08-24 23:31:15.806089
-27	27	27	135	22	2026-08-24 23:31:15.806089
-28	28	28	300	55	2026-08-24 23:31:15.806089
-29	29	29	400	60	2026-08-24 23:31:15.806089
-30	30	30	500	80	2026-08-24 23:31:15.806089
-31	31	31	350	55	2026-08-24 23:31:15.806089
-32	32	32	280	45	2026-08-24 23:31:15.806089
-33	33	33	160	25	2026-08-24 23:31:15.806089
-34	34	34	145	25	2026-08-24 23:31:15.806089
-35	35	35	78	15	2026-08-24 23:31:15.806089
-36	36	36	66	12	2026-08-24 23:31:15.806089
-37	37	37	420	70	2026-08-24 23:31:15.806089
-38	38	38	52	10	2026-08-24 23:31:15.806089
-39	39	39	240	40	2026-08-24 23:31:15.806089
-40	40	40	310	50	2026-08-24 23:31:15.806089
-41	41	41	270	45	2026-08-24 23:31:15.806089
-42	42	42	380	60	2026-08-24 23:31:15.806089
-43	43	43	98	18	2026-08-24 23:31:15.806089
-44	44	44	440	70	2026-08-24 23:31:15.806089
-45	45	45	88	15	2026-08-24 23:31:15.806089
-46	46	46	62	12	2026-08-24 23:31:15.806089
-47	47	47	130	22	2026-08-24 23:31:15.806089
-48	48	48	76	14	2026-08-24 23:31:15.806089
-49	49	49	500	85	2026-08-24 23:31:15.806089
-50	50	50	35	8	2026-08-24 23:31:15.806089
-1	1	1	115	15	2026-08-24 23:31:15.806089
+2	2	2	85	20	2026-08-25 04:55:03.161923
+3	3	3	45	10	2026-08-25 04:55:03.161923
+4	4	4	32	8	2026-08-25 04:55:03.161923
+5	5	5	60	12	2026-08-25 04:55:03.161923
+6	6	6	150	25	2026-08-25 04:55:03.161923
+7	7	7	55	10	2026-08-25 04:55:03.161923
+8	8	8	200	30	2026-08-25 04:55:03.161923
+9	9	9	180	20	2026-08-25 04:55:03.161923
+10	10	10	140	25	2026-08-25 04:55:03.161923
+11	11	11	75	15	2026-08-25 04:55:03.161923
+12	12	12	95	18	2026-08-25 04:55:03.161923
+13	13	13	210	35	2026-08-25 04:55:03.161923
+14	14	14	320	50	2026-08-25 04:55:03.161923
+15	15	15	40	10	2026-08-25 04:55:03.161923
+16	16	16	165	28	2026-08-25 04:55:03.161923
+17	17	17	190	30	2026-08-25 04:55:03.161923
+18	18	18	25	6	2026-08-25 04:55:03.161923
+19	19	19	18	5	2026-08-25 04:55:03.161923
+20	20	20	70	12	2026-08-25 04:55:03.161923
+21	21	21	48	10	2026-08-25 04:55:03.161923
+22	22	22	230	40	2026-08-25 04:55:03.161923
+23	23	23	110	20	2026-08-25 04:55:03.161923
+24	24	24	260	45	2026-08-25 04:55:03.161923
+25	25	25	90	15	2026-08-25 04:55:03.161923
+26	26	26	175	30	2026-08-25 04:55:03.161923
+27	27	27	135	22	2026-08-25 04:55:03.161923
+28	28	28	300	55	2026-08-25 04:55:03.161923
+29	29	29	400	60	2026-08-25 04:55:03.161923
+30	30	30	500	80	2026-08-25 04:55:03.161923
+31	31	31	350	55	2026-08-25 04:55:03.161923
+32	32	32	280	45	2026-08-25 04:55:03.161923
+33	33	33	160	25	2026-08-25 04:55:03.161923
+34	34	34	145	25	2026-08-25 04:55:03.161923
+35	35	35	78	15	2026-08-25 04:55:03.161923
+36	36	36	66	12	2026-08-25 04:55:03.161923
+37	37	37	420	70	2026-08-25 04:55:03.161923
+38	38	38	52	10	2026-08-25 04:55:03.161923
+39	39	39	240	40	2026-08-25 04:55:03.161923
+40	40	40	310	50	2026-08-25 04:55:03.161923
+41	41	41	270	45	2026-08-25 04:55:03.161923
+42	42	42	380	60	2026-08-25 04:55:03.161923
+43	43	43	98	18	2026-08-25 04:55:03.161923
+44	44	44	440	70	2026-08-25 04:55:03.161923
+45	45	45	88	15	2026-08-25 04:55:03.161923
+46	46	46	62	12	2026-08-25 04:55:03.161923
+47	47	47	130	22	2026-08-25 04:55:03.161923
+48	48	48	76	14	2026-08-25 04:55:03.161923
+49	49	49	500	85	2026-08-25 04:55:03.161923
+50	50	50	35	8	2026-08-25 04:55:03.161923
+1	1	1	115	15	2026-08-25 04:55:03.161923
 \.
 
 
 --
--- Data for Name: ordenes; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: ordenes; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.ordenes (id_orden, id_cliente, fecha_orden, estado, direccion_envio, ciudad_envio) FROM stdin;
@@ -1015,12 +1065,12 @@ COPY logitrack.ordenes (id_orden, id_cliente, fecha_orden, estado, direccion_env
 48	48	2026-07-24 11:35:00	despachada	Av. Vitacura 3200	Las Condes
 49	49	2026-07-25 09:55:00	entregada	Av. General Bustamante 200	Providencia
 50	50	2026-07-25 14:15:00	cancelada	Av. Marcoleta 500	Santiago
-51	1	2026-08-24 23:31:43.953151	pendiente	Av. Bernardo O'Higgins 1234	Santiago
+51	1	2026-08-25 04:58:30.33874	pendiente	Av. Bernardo O'Higgins 1234	Santiago
 \.
 
 
 --
--- Data for Name: producto_proveedor; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: producto_proveedor; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.producto_proveedor (id_producto, id_proveedor, costo_compra, tiempo_entrega_dias) FROM stdin;
@@ -1088,7 +1138,7 @@ COPY logitrack.producto_proveedor (id_producto, id_proveedor, costo_compra, tiem
 
 
 --
--- Data for Name: productos; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: productos; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.productos (id_producto, sku, nombre, descripcion, peso_kg, precio_unitario, id_categoria) FROM stdin;
@@ -1147,7 +1197,7 @@ COPY logitrack.productos (id_producto, sku, nombre, descripcion, peso_kg, precio
 
 
 --
--- Data for Name: proveedores; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: proveedores; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.proveedores (id_proveedor, nombre, rut, telefono, email, pais_origen) FROM stdin;
@@ -1205,7 +1255,7 @@ COPY logitrack.proveedores (id_proveedor, nombre, rut, telefono, email, pais_ori
 
 
 --
--- Data for Name: transportistas; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: transportistas; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.transportistas (id_transportista, nombre, rut, telefono, tipo_vehiculo) FROM stdin;
@@ -1263,7 +1313,7 @@ COPY logitrack.transportistas (id_transportista, nombre, rut, telefono, tipo_veh
 
 
 --
--- Data for Name: ubicaciones; Type: TABLE DATA; Schema: logitrack; Owner: -
+-- Data for Name: ubicaciones; Type: TABLE DATA; Schema: logitrack; Owner: ua_eq06
 --
 
 COPY logitrack.ubicaciones (id_ubicacion, id_bodega, pasillo, estante, nivel) FROM stdin;
@@ -1321,91 +1371,91 @@ COPY logitrack.ubicaciones (id_ubicacion, id_bodega, pasillo, estante, nivel) FR
 
 
 --
--- Name: bodega_id_bodega_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: bodega_id_bodega_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.bodega_id_bodega_seq', 50, true);
 
 
 --
--- Name: categorias_id_categoria_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: categorias_id_categoria_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.categorias_id_categoria_seq', 50, true);
 
 
 --
--- Name: clientes_id_cliente_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: clientes_id_cliente_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.clientes_id_cliente_seq', 53, true);
 
 
 --
--- Name: detalle_ordenes_id_detalle_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes_id_detalle_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.detalle_ordenes_id_detalle_seq', 61, true);
 
 
 --
--- Name: empleados_id_empleado_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: empleados_id_empleado_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.empleados_id_empleado_seq', 50, true);
 
 
 --
--- Name: envios_id_envio_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: envios_id_envio_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.envios_id_envio_seq', 51, true);
 
 
 --
--- Name: inventario_id_inventario_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: inventario_id_inventario_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.inventario_id_inventario_seq', 50, true);
 
 
 --
--- Name: ordenes_id_orden_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: ordenes_id_orden_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.ordenes_id_orden_seq', 51, true);
 
 
 --
--- Name: productos_id_producto_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: productos_id_producto_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.productos_id_producto_seq', 51, true);
 
 
 --
--- Name: proveedores_id_proveedor_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: proveedores_id_proveedor_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.proveedores_id_proveedor_seq', 50, true);
 
 
 --
--- Name: transportistas_id_transportista_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: transportistas_id_transportista_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.transportistas_id_transportista_seq', 50, true);
 
 
 --
--- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: -
+-- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE SET; Schema: logitrack; Owner: ua_eq06
 --
 
 SELECT pg_catalog.setval('logitrack.ubicaciones_id_ubicacion_seq', 50, true);
 
 
 --
--- Name: bodega bodega_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: bodega bodega_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.bodega
@@ -1413,7 +1463,7 @@ ALTER TABLE ONLY logitrack.bodega
 
 
 --
--- Name: categorias categorias_nombre_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: categorias categorias_nombre_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.categorias
@@ -1421,7 +1471,7 @@ ALTER TABLE ONLY logitrack.categorias
 
 
 --
--- Name: categorias categorias_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: categorias categorias_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.categorias
@@ -1429,7 +1479,7 @@ ALTER TABLE ONLY logitrack.categorias
 
 
 --
--- Name: clientes clientes_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: clientes clientes_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.clientes
@@ -1437,7 +1487,7 @@ ALTER TABLE ONLY logitrack.clientes
 
 
 --
--- Name: clientes clientes_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: clientes clientes_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.clientes
@@ -1445,7 +1495,7 @@ ALTER TABLE ONLY logitrack.clientes
 
 
 --
--- Name: detalle_ordenes detalle_ordenes_id_orden_id_producto_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes detalle_ordenes_id_orden_id_producto_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.detalle_ordenes
@@ -1453,7 +1503,7 @@ ALTER TABLE ONLY logitrack.detalle_ordenes
 
 
 --
--- Name: detalle_ordenes detalle_ordenes_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes detalle_ordenes_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.detalle_ordenes
@@ -1461,7 +1511,7 @@ ALTER TABLE ONLY logitrack.detalle_ordenes
 
 
 --
--- Name: empleados empleados_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: empleados empleados_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.empleados
@@ -1469,7 +1519,7 @@ ALTER TABLE ONLY logitrack.empleados
 
 
 --
--- Name: empleados empleados_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: empleados empleados_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.empleados
@@ -1477,7 +1527,7 @@ ALTER TABLE ONLY logitrack.empleados
 
 
 --
--- Name: envios envios_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: envios envios_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.envios
@@ -1485,7 +1535,7 @@ ALTER TABLE ONLY logitrack.envios
 
 
 --
--- Name: inventario inventario_id_producto_id_ubicacion_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: inventario inventario_id_producto_id_ubicacion_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.inventario
@@ -1493,7 +1543,7 @@ ALTER TABLE ONLY logitrack.inventario
 
 
 --
--- Name: inventario inventario_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: inventario inventario_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.inventario
@@ -1501,7 +1551,7 @@ ALTER TABLE ONLY logitrack.inventario
 
 
 --
--- Name: ordenes ordenes_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: ordenes ordenes_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ordenes
@@ -1509,7 +1559,7 @@ ALTER TABLE ONLY logitrack.ordenes
 
 
 --
--- Name: producto_proveedor producto_proveedor_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: producto_proveedor producto_proveedor_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.producto_proveedor
@@ -1517,7 +1567,7 @@ ALTER TABLE ONLY logitrack.producto_proveedor
 
 
 --
--- Name: productos productos_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: productos productos_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.productos
@@ -1525,7 +1575,7 @@ ALTER TABLE ONLY logitrack.productos
 
 
 --
--- Name: productos productos_sku_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: productos productos_sku_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.productos
@@ -1533,7 +1583,7 @@ ALTER TABLE ONLY logitrack.productos
 
 
 --
--- Name: proveedores proveedores_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: proveedores proveedores_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.proveedores
@@ -1541,7 +1591,7 @@ ALTER TABLE ONLY logitrack.proveedores
 
 
 --
--- Name: proveedores proveedores_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: proveedores proveedores_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.proveedores
@@ -1549,7 +1599,7 @@ ALTER TABLE ONLY logitrack.proveedores
 
 
 --
--- Name: transportistas transportistas_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: transportistas transportistas_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.transportistas
@@ -1557,7 +1607,7 @@ ALTER TABLE ONLY logitrack.transportistas
 
 
 --
--- Name: transportistas transportistas_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: transportistas transportistas_rut_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.transportistas
@@ -1565,7 +1615,7 @@ ALTER TABLE ONLY logitrack.transportistas
 
 
 --
--- Name: ubicaciones ubicaciones_id_bodega_pasillo_estante_nivel_key; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: ubicaciones ubicaciones_id_bodega_pasillo_estante_nivel_key; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ubicaciones
@@ -1573,7 +1623,7 @@ ALTER TABLE ONLY logitrack.ubicaciones
 
 
 --
--- Name: ubicaciones ubicaciones_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: ubicaciones ubicaciones_pkey; Type: CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ubicaciones
@@ -1581,7 +1631,7 @@ ALTER TABLE ONLY logitrack.ubicaciones
 
 
 --
--- Name: detalle_ordenes detalle_ordenes_id_orden_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes detalle_ordenes_id_orden_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.detalle_ordenes
@@ -1589,7 +1639,7 @@ ALTER TABLE ONLY logitrack.detalle_ordenes
 
 
 --
--- Name: detalle_ordenes detalle_ordenes_id_producto_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: detalle_ordenes detalle_ordenes_id_producto_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.detalle_ordenes
@@ -1597,7 +1647,7 @@ ALTER TABLE ONLY logitrack.detalle_ordenes
 
 
 --
--- Name: empleados empleados_id_bodega_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: empleados empleados_id_bodega_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.empleados
@@ -1605,7 +1655,7 @@ ALTER TABLE ONLY logitrack.empleados
 
 
 --
--- Name: envios envios_id_empleado_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: envios envios_id_empleado_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.envios
@@ -1613,7 +1663,7 @@ ALTER TABLE ONLY logitrack.envios
 
 
 --
--- Name: envios envios_id_orden_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: envios envios_id_orden_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.envios
@@ -1621,7 +1671,7 @@ ALTER TABLE ONLY logitrack.envios
 
 
 --
--- Name: envios envios_id_transportista_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: envios envios_id_transportista_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.envios
@@ -1629,7 +1679,7 @@ ALTER TABLE ONLY logitrack.envios
 
 
 --
--- Name: inventario inventario_id_producto_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: inventario inventario_id_producto_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.inventario
@@ -1637,7 +1687,7 @@ ALTER TABLE ONLY logitrack.inventario
 
 
 --
--- Name: inventario inventario_id_ubicacion_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: inventario inventario_id_ubicacion_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.inventario
@@ -1645,7 +1695,7 @@ ALTER TABLE ONLY logitrack.inventario
 
 
 --
--- Name: ordenes ordenes_id_cliente_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: ordenes ordenes_id_cliente_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ordenes
@@ -1653,7 +1703,7 @@ ALTER TABLE ONLY logitrack.ordenes
 
 
 --
--- Name: producto_proveedor producto_proveedor_id_producto_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: producto_proveedor producto_proveedor_id_producto_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.producto_proveedor
@@ -1661,7 +1711,7 @@ ALTER TABLE ONLY logitrack.producto_proveedor
 
 
 --
--- Name: producto_proveedor producto_proveedor_id_proveedor_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: producto_proveedor producto_proveedor_id_proveedor_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.producto_proveedor
@@ -1669,7 +1719,7 @@ ALTER TABLE ONLY logitrack.producto_proveedor
 
 
 --
--- Name: productos productos_id_categoria_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: productos productos_id_categoria_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.productos
@@ -1677,7 +1727,7 @@ ALTER TABLE ONLY logitrack.productos
 
 
 --
--- Name: ubicaciones ubicaciones_id_bodega_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: -
+-- Name: ubicaciones ubicaciones_id_bodega_fkey; Type: FK CONSTRAINT; Schema: logitrack; Owner: ua_eq06
 --
 
 ALTER TABLE ONLY logitrack.ubicaciones
@@ -1687,6 +1737,4 @@ ALTER TABLE ONLY logitrack.ubicaciones
 --
 -- PostgreSQL database dump complete
 --
-
-\unrestrict lYdvnNBROxhZjnJldhksU2gHC0dQhuyzkMivnasVdgsabJRvVAT0FIuTFRtJ6Hs
 
