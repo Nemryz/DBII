@@ -89,4 +89,4 @@ El cuarto problema fue el uso de la palabra reservada DO como alias de la tabla 
 
 ## Recursos y referencias
 
-Para profundizar se recomienda revisar los enunciados oficiales de cada laboratorio, siendo estos, LAB01_PARTE01.pdf y LAB01_PARTE02.pdf. Así como algunos de los presentes documentos extras para ir aprendiendo sobre el uso de PostgreSQL y pgAdmin4, entre ellos, la guía de SSH, la guía de respaldo y restauración, y la guía de consultas analíticas y de agregación.  
+Para profundizar se recomienda revisar los enunciados oficiales de cada laboratorio, siendo estos, LAB01_PARTE01.pdf y LAB01_PARTE02.pdf. Así como algunos de los presentes documentos extras para ir aprendiendo sobre el uso de PostgreSQL y pgAdmin4, entre ellos, la guía de SSH, la guía de respaldo y restauración, y la guía de consultas analíticas y de agregación .
